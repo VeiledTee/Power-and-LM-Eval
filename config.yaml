@@ -1,0 +1,30 @@
+# ================================================
+# LM-EVALUATION-HARNESS CONFIGURATION
+# ================================================
+
+# List of Ollama models to evaluate.
+# These must match the names from the 'ollama list' command.
+models:
+  - deepseek-r1:8b
+  - deepseek-r1:14b
+  - deepseek-r1:32b
+  - gemma3:4b
+  - gemma3:12b
+  - gemma3:27b
+
+# List of evaluation tasks from the Hugging Face Hub.
+# Find more tasks at: https://huggingface.co/spaces/evaluate-harness/leaderboard
+tasks:
+  - hotpotqa
+  - boolq
+
+# General settings for the evaluation run.
+evaluation_settings:
+  # Number of documents to use from each task for the evaluation.
+  # This is highly recommended for quick tests.
+  # For a full evaluation on the entire dataset, set this to null or remove the line.
+  limit: 100
+
+  # Set device for computation. Options: "cpu", "cuda:0", "cuda:1", etc.
+  # Requires a PyTorch installation with CUDA support to use "cuda".
+  device: "cuda"
