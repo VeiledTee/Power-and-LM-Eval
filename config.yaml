@@ -18,6 +18,8 @@ tasks:
   - hotpotqa
   - boolq
 
+include_context: true
+
 # General settings for the evaluation run.
 evaluation_settings:
   # Number of documents to use from each task for the evaluation.
